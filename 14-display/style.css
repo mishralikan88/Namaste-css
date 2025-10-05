@@ -1,0 +1,201 @@
+
+/** ------------------------------------- -->
+/**  DISPLAY IN CSS  
+/** ---------------------------------------- -->
+
+/* 
+
+display: block → element takes a full row, starts on a new line, and stacks vertically.
+
+🔑 Key behaviors
+  → New line start ✅
+  → Full width by default (width: auto) ✅
+  → Stacks one under another ✅
+  → You can set width/height/margins/padding ✅
+
+
+
+block elements -  div, p, h1–h6, ul, ol, li, section, article, header, footer, nav, main, form
+
+
+Use when -
+
+   - You want an element to occupy its own row (paragraphs, cards, sections).
+   - You want easy sizing (set width/height) and spacing (margin/padding).
+
+example -
+
+   .btn {
+     display: block;     // takes full row
+     width: 240px;       // you can size it
+     margin: 12px auto;  // easy to center with auto left/right
+     padding: 10px 14px;
+     text-align: center;
+   }
+
+*/ 
+
+
+/** ------------------------------------------------------------------------------------------------------ */
+
+/* 
+
+display: inline → element stays in the text flow (same line), only as wide as its content.
+
+🔑 Key behaviors
+  → Does NOT start on a new line ✅
+  → Non-replaced inline elements means inline elements whose content is just text/inline nodes
+   (not an external resource), e.g., <span>, <a>, <em>, <strong>, <code> , they ignore width/height; size comes from content + line-height.
+  → Replaced inline elements means inline elementes which are rendered by external/UA resource
+   (e.g., <img>, <video>, <canvas>, <iframe>, <input>, <select>, <textarea>), they DO honor width/height.
+  → Inline element Sits side-by-side with other inline elements ✅
+  → Left/Right margin & padding work; Top/Bottom don’t push lines ✅
+  → Inline elements sit on the text baseline; vertical spacing comes from line-height, not height. 
+  
+  
+
+
+
+inline elements -  span, a, strong, em, b, i, u, code, label, small, mark, sub, sup, time
+
+Use when -
+   - You want content to flow within a line of text.
+   - You need small inline badges/labels/links without breaking the line.
+   - You don’t need to set explicit width/height.
+
+example -
+
+   .tag {
+     display: inline;      // stays in the same line
+     padding: 2px 6px;     // horizontal padding shows; vertical won’t push lines
+     background: #f3f3f3;
+     border-radius: 4px;
+     line-height: 1.4;     // control vertical feel within the line
+   }
+
+
+*/ 
+
+/** ------------------------------------------------------------------------------------------------------ */
+
+
+/* 
+
+display: inline-block → sits in the same line like inline, BUT you can set width/height.
+
+🔑 Key behaviors
+  → Does NOT start on a new line (flows inline) ✅
+  → Respects width & height ✅
+  → All margins & padding work (top/bottom affect the line box) ✅
+  → Wraps to next line if there’s not enough horizontal space ✅
+  → Whitespace in HTML creates small gaps between inline-blocks ✅
+
+Use when -
+  - You want items side-by-side without using flex/grid.
+  - You need real box sizing (width/height) but still inline flow.
+  - You want vertical padding to increase.
+
+example -
+
+   .pill {
+     display: inline-block;  // inline positioning + box sizing
+     padding: 6px 10px;      // vertical padding works
+     border-radius: 999px;
+     background: #f3f3f3;
+     line-height: 1.2;      
+   }
+
+
+
+Quick compare (1-liners)
+  inline        → inline flow; width/height ignored
+  inline-block  → inline flow; width/height allowed
+  block         → new line + full width by default
+
+*/
+
+
+/** ------------------------------------------------------------------------------------------------------ */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-family: Urbanist;
+}
+
+body {
+  padding: 50px 100px;
+  background-color: hsla(0, 0%, 94%);
+}
+
+#main-heading {
+  color: #1e1403;
+  text-align: left;
+  font-size: 64px;
+  margin-bottom: 30px;
+}
+
+p {
+  width: 500px;
+  margin: 0 auto;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+  font-size: 24px;
+  letter-spacing: 1.5px;
+  background: linear-gradient(to right, #182848, #4b6cb7);
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  border-radius: 5px;
+  color: #fff;
+  padding: 30px 20px;
+  margin-bottom: 24px;
+}
+
+a {
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+  font-size: 24px;
+  letter-spacing: 1.5px;
+  background: linear-gradient(to right, #182848, #4b6cb7);
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  color: #fff;
+  border-radius: 5px;
+  /* width: 500px; */
+  /* height: 100px; */
+  padding: 15px 36px;
+  border: 1px solid red;
+  margin-top: 100px;
+  margin-right: 30px;
+  /* display: inline-block; */
+  display: block;
+}
+
+/* TBD */
+p:nth-of-type(2),
+a:nth-of-type(2),
+.inline-block-elem:last-child {
+  background: linear-gradient(to right, #514a9d, #24c6dc);
+  display: none;
+}
+
+/** ------------------------------------- -->
+/**  INTERVIEW QUESTIONS  
+/** ---------------------------------------- -->
+
+/*? 1: What is the main difference between display: block; and display: inline; elements in CSS? */
+
+/*? 1: What does display: none; do to an element's accessibility? */
+/* It makes the element completely inaccessible to screen readers and keyboard navigation.(TBD) */
+
+/*? 3: How do you center an element horizontally using display: block;? */
+/* To center a display: block; element horizontally, you can set its left and right margins to auto. */
+
+/*? 4: What is the default behavior of display: inline; elements with regard to margin and padding? */
+/* display: inline; elements don't respect top and bottom margins or padding, only left and right. Also width and height is not accepted */
+
+/*? 5: How can you make an inline element like a link or a span act like a block-level element? ⭐⭐*/
+/* You can apply display: block; or display: inline-block; to make an inline element behave like a block-level element. */
+
+/*? 6: What is the impact of applying display: block; to an anchor <a> element? */
+/* Applying display: block; to an anchor element allows you to set its width, height, and apply padding or margin. This is often used for creating custom-styled buttons. */

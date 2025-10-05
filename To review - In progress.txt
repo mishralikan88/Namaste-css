@@ -1,0 +1,23 @@
+1.Grid - minmax()
+2.Grid - Responsive UI (Autofill & autofit)
+3.Grid - auto key word
+4.Grid - min-content, max-content
+5.Grid - place-items, place-content, place-self
+6.Grid - Implicit vs Explicit Grid
+7.Grid- fit-content()
+
+Grid Reference - https://www.youtube.com/watch?v=SIvCb7Ze2HA&t=2557s
+
+Positions (Absolute, Relative, Fixed, sticky, static)
+Z index 
+animations
+translation
+transformation
+transition
+
+
+
+part 1 - 
+
+https://www.youtube.com/watch?v=MSICFljRcb4&t=25654s 
+9.19 to end >>>>

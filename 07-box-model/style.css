@@ -1,0 +1,130 @@
+/** ------------------------------------- -->
+/**  BOX MODEL IN CSS  (BOX SIZING)
+/** ---------------------------------------- --> */
+
+/*? The CSS Box Model consists of four main components:
+
+1. Content: This is the innermost part of the element, which holds the actual content, such as text, images, or other HTML elements.
+
+2. Padding: Padding is the space between the content and the element's border. It provides internal spacing within the element.
+            content and border ke bix ka space ko padding 
+    
+3. Border: The border surrounds the padding and content, creating a visible boundary around the element. It can have a thickness, style, and color.
+
+4. Margin: The margin is the space outside the element's border. It separates the element from other elements on the page and controls the spacing between elements. */
+
+/** VERY VERY IMPORTANT  */
+
+/* CSS box-sizing
+
+👉 Controls how width/height of an element are calculated.
+
+Two main values:
+-----------------------------------
+
+1️⃣ box-sizing: content-box (default)
+👉 Width/height = content only.
+👉 Padding + border are added on top.
+👉 Example: width: 100px; padding: 10px; border: 2px;
+   Total width = 112px.
+
+2️⃣ box-sizing: border-box
+👉 Width/height = content + padding + border (all included).
+👉 Padding + border fit inside the given size.
+👉 Example: width: 100px; padding: 10px; border: 2px;
+   Total width = 100px (content shrinks to adjust). */
+
+/** ---------------------------------------- --> */
+
+
+/* ✅ Apply border-box to all elements */
+
+* {
+  box-sizing: border-box;
+}
+
+/* ⚠️ Problem: 
+   Browser adds default margin & padding (body, h1, p etc.)
+   → breaks height/width (extra space, scroll) 
+*/
+
+/* ✅ Fix: Reset defaults */
+
+
+* {
+  margin: 0;   /* remove default margin */
+  padding: 0;  /* remove default padding */
+  box-sizing: border-box; /* keep border-box */
+} 
+
+/* 🎯 Final Note:
+   - This applies to ALL elements (not just one) 
+   - Keeps UI consistent across browsers
+*/
+
+
+/** ---------------------------------------- --> */
+
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-family: Urbanist;
+}
+
+body {
+  width: 100%;
+  height: 100vh;
+  background-color: hsl(0, 0%, 94%);
+}
+
+#main-heading {
+  padding: 40px 0;
+  font-weight: bold;
+  font-size: 48px;
+  color: #031721;
+  text-align: center;
+}
+
+p {
+  line-height: 1.6;
+  letter-spacing: 1px;
+  font-size: 18px;
+}
+
+/* box model css  */
+
+.section-one {
+  width: 800px;
+  background-color: #0f2c59;
+  color: #fff;
+  border: 20px solid #337ccf;
+  padding: 50px;
+  margin: 0 auto;
+}
+
+/** ---------------------------------------- -->
+
+/** ------------------------------------- -->
+/** INTERVIEW QUESTIONS
+/** ---------------------------------------- --> */
+/*? 1: Explain what the CSS Box Model is and its components. */
+
+/*? 2: What is the purpose of the box-sizing property in CSS? ⭐⭐ */
+/* The box-sizing property controls how the total width and height of an element are calculated. The two values it can take are content-box (default) and border-box. content-box calculates the total size including padding and border, while border-box calculates the total size including only padding. */
+
+/*? 3: How can you make an element's content box 300 pixels wide with a 10-pixel border and 20-pixel padding? */
+
+/* section {
+  width: 300px;
+  border: 5px solid red;
+  padding: 10px;
+  box-sizing: border-box;
+} */
+
+/*? 4: How can you globally apply box-sizing: border-box; to all elements on a web page? ⭐⭐⭐*/
+/*? Here comes the Universal Operator  */

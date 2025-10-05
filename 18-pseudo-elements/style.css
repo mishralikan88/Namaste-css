@@ -1,0 +1,174 @@
+
+/** ------------------------------------- -->
+/**  Pseudo Elements In CSS 
+/** ---------------------------------------- --> */
+
+
+/*
+
+::before
+
+Adds content before an element’s text/content.
+
+Commonly used for icons, quotes, or decoration.
+
+✅ Syntax:
+
+selector::before {
+  content: "✨";
+}
+
+::after
+
+Adds content after an element’s text/content.
+
+Useful for symbols, notes, or extra styling.
+
+✅ Syntax:
+
+selector::after {
+  content: "✔️";
+}
+
+*/ 
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Jost";
+}
+
+body {
+  background-color: #080a0c;
+  color: azure;
+  height: 100vh;
+}
+
+.container {
+  height: 100vh;
+  max-width: 1320px;
+  padding: 64px 0;
+  margin: 0 auto;
+  display: grid;
+  align-items: center;
+}
+
+.grid {
+  display: grid;
+  align-items: center;
+  gap: 64px;
+}
+
+.grid-two-column {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.hero-content h1 {
+  font-size: 48px;
+  text-align: left;
+  position: relative;
+  display: inline-block;
+  position: relative;
+}
+
+/* Before Pseudo element  */
+
+/* h1::before targets the h1 element and add content before h1 .To properly style 'before h1 content'  h1::before has to be absolute and h1 has to be relative .h1::before will be child for h1 parent . Same is the case for h1::after */
+
+/* content: "THAPA TECHNICAL"; */
+
+/* */
+.hero-content h1::before { 
+  content: "\f121";
+  font-family: "font awesome 6 free";
+  position: absolute;
+  top: -18px;
+  font-size: 24px;
+  /* letter-spacing: 6px; */
+  color: rgb(255, 204, 112);
+
+}
+
+/* After Pseudo elements  */
+.hero-content h1::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  bottom: 5px;
+  border: 2px solid #ae445a;
+  width: 60%;
+}
+
+.hero-content p {
+  font-size: 18px;
+  letter-spacing: 1px;
+  margin: 20px 0 40px 0;
+}
+
+.hero-content p::first-letter {
+  font-size: 48px;
+  color: #ae445a;
+  font-weight: bold;
+}
+
+.hero-content p::first-line {
+  text-decoration: underline;
+}
+
+.hero-content p::selection { /* When you select a paragraph the background color will be cream. */
+  background-color: rgba(255, 204, 112);
+}
+
+img {
+  max-width: 80%;
+  height: auto;
+}
+
+a {
+  background-color: transparent;
+  display: inline-block;
+  padding: 12px 32px;
+  text-decoration: none;
+  border-radius: 05px;
+  font-size: 24px;
+  font-weight: bold;
+  border: 1px solid #fff;
+  color: #fff;
+  width: 200px;
+  text-align: center;
+}
+
+/* .hero-content a:hover {
+  background-color: #fff;
+  color: #000;
+  width: 300px;
+} */
+
+/** ------------------------------------- -->
+  /**  INTERVIEW QUESTIONS
+  /** ---------------------------------------- --> */
+
+/*? 1: How can you use the ::before pseudo-element to insert a Font Awesome icon before the content of a h1 element?  */
+
+/* you can even add the icons  */
+
+
+/* ❓ Question
+
+When we apply position: absolute to both ::before and ::after on an <h1>, why does ::before appear at the top-left of the element, while ::after does not?
+
+✅ Answer
+
+::before is inserted before the first text node of <h1>.
+Since inline text starts from the top-left corner of the block, it naturally appears there — giving the impression that it’s positioned at (top:0; left:0).
+
+::after is inserted after the last text node of <h1>.
+Its inline position is at the end of the line, so without explicit top and left, it remains there rather than moving to the top-left.
+
+By default, absolutely positioned elements have top/left: auto (not 0), meaning they stay where they were inserted in the flow unless we explicitly set coordinates.
+
+👉 To make both ::before and ::after align to the top-left of <h1>, you must set top: 0; left: 0; explicitly. */
+
+
+/* :: before and :: after .These are inline elements. */
